@@ -15,7 +15,7 @@ class GPIO_Iface:
             with open('data.json', 'r') as file:
                 data = json.load(file)
                 print(data)
-                data["BEAM"][0] += 1
+                data["CASES"][0] += 1
                 print(data)
             with open('data.json', 'w') as file:
                 file.write(json.dumps(data, indent=4))
