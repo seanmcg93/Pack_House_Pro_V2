@@ -37,6 +37,7 @@ def get_data():
 
 @app.route("/", methods = ['GET'])
 def index():
+    flask.g.title="Sweet P.O.T.A.T.O"
     return render_template("index.html")
 
 if __name__ == "__main__":
