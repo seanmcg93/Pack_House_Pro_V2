@@ -19,7 +19,6 @@ class Sensor_Iface:
     def sensor_action(self):
         with open('data.json', 'r') as file:
             data = json.load(file)
-            print(data)
             data["CASES"][0] += 1
             print(data)
         with open('data.json', 'w') as file:
