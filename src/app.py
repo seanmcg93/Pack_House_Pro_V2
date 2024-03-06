@@ -6,7 +6,7 @@ import json
 import threading
 
 # File imports
-import GPIO_interface
+import Sensor_interface
 
 # Start app
 app = flask.Flask(__name__)
@@ -20,7 +20,7 @@ def to_default():
         file.write(json.dumps(data, indent=4))
 
 def run_interface():
-    interface = GPIO_interface.Sensor_Iface()
+    interface = Sensor_interface.Sensor_Iface()
 
 # Routes 
 @app.route("/reset", methods = ['GET'])
