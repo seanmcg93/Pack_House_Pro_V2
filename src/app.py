@@ -4,6 +4,9 @@ import flask
 from flask import render_template, redirect
 import json
 import threading
+import schedule
+import time
+
 
 # File imports
 import Sensor_interface
@@ -45,7 +48,16 @@ if __name__ == "__main__":
     # Start GPIO interface in a separate thread
     interface_thread = threading.Thread(target=run_interface)
     interface_thread.start()
+    # Schedule the reset_count function to run every day at midnight
+    schedule.every().day.at("00:00").do(to_default)
+
+    # Start the schedule
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
+
     # Start Flask app
     app.run(host="0.0.0.0", port=1234, debug=True)
+
 
 
