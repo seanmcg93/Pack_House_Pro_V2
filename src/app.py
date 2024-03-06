@@ -14,7 +14,7 @@ app = flask.Flask(__name__)
 # functions
 def to_default():
     data = {
-        "CASES": [0,400]
+        "CASES": [0,10000]
     }
     with open('data.json', 'w') as file:
         file.write(json.dumps(data, indent=4))
