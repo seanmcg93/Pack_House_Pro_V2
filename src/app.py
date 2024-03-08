@@ -41,7 +41,7 @@ def index():
     return render_template("index.html")
 
 if __name__ == "__main__":
-    to_default()
+    
     # Start GPIO interface in a separate thread
     interface_thread = threading.Thread(target=run_interface)
     interface_thread.start()
