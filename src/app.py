@@ -42,10 +42,10 @@ def index():
 
 if __name__ == "__main__":
     
-    # Start GPIO interface in a separate thread
+    # Start interface in a separate thread
     interface_thread = threading.Thread(target=run_interface)
     interface_thread.start()
     # Start Flask app
-    app.run(host="0.0.0.0", port=1234, debug=True)
+    app.run(host="0.0.0.0", port=1234, debug=False)
 
 
